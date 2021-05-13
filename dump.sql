@@ -109,7 +109,7 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id_Products` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(45) NOT NULL,
-  `Count` int NOT NULL,
+  `Price` int NOT NULL,
   PRIMARY KEY (`id_Products`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -120,8 +120,33 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Капучино',90),(2,'Латте',85),(3,'Эспрессо',70),(4,'Капуоранж',250),(5,'Американно',100),(6,'Кофе со льдом',200),(7,'Кофе с лимоном',120),(8,'Гляссе',300),(9,'Кофе с ромом',500),(10,'Кофе с коньяком',500),(11,'Кофе с ликером Бейлиз',1000),(12,'Кофе с виски',700);
+INSERT INTO `products` VALUES (1,'Капучино',0),(2,'Латте',0),(3,'Эспрессо',0),(4,'Капуоранж',0),(5,'Американно',0),(6,'Кофе со льдом',0),(7,'Кофе с лимоном',0),(8,'Гляссе',0),(9,'Кофе с ромом',0),(10,'Кофе с коньяком',0),(11,'Кофе с ликером Бейлиз',0),(12,'Кофе с виски',0);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id_Users` int NOT NULL AUTO_INCREMENT,
+  `Login` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_Users`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'admin','21232f297a57a5a743894a0e4a801fc3'),(2,'user1','b144ef4a51d09eb8878c77bdc4ee8e6e'),(3,'user2','bfd59291e825b5f2bbf1eb76569f8fe7');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -133,4 +158,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-13 10:55:23
+-- Dump completed on 2021-05-13 11:00:50
